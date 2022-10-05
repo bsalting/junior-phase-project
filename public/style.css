@@ -1,0 +1,9 @@
+body {
+  font-family: Lucida Grande;
+}
+
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 2rem 0 2rem 0;
+}

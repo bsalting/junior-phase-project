@@ -1,15 +1,32 @@
-const express = require('express')
-const path = require('path')
+const express = require("express");
+const path = require("path");
+const app = express();
+const { Campus } = require("../db");
 
-const app = express()
+app.use(express.json());
+app.use("/dist", express.static(path.join(__dirname, "../dist")));
+app.use("/public", express.static("public"));
 
-// static middleware
-app.use('/dist', express.static(path.join(__dirname, '../dist')))
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "../public/index.html"));
+});
 
+app.get("/api/campuses", async (req, res, next) => {
+  try {
+    res.send(await Campus.findAll());
+  } catch (ex) {
+    next(ex);
+  }
+});
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'))
-}); 
+app.delete("/api/campuses/:id", async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id);
+    await campus.destroy();
+    res.sendStatus(204);
+  } catch (ex) {
+    next(ex);
+  }
+});
 
 module.exports = app;
-

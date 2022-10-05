@@ -100,7 +100,7 @@ const seed = async () => {
       description: "Beauxbatons...",
     }),
   ]);
-  return Promise.all(
+  return Promise.all([
     Student.create({
       firstName: "Harry",
       lastName: "Potter",
@@ -118,8 +118,8 @@ const seed = async () => {
       lastName: "Delacour",
       email: "fd@beauxbatons.edu",
       campusId: beauxbatons.id,
-    })
-  );
+    }),
+  ]);
 };
 
 module.exports = {
