@@ -16,8 +16,22 @@ const campuses = (state = [], action) => {
   return state;
 };
 
+const students = (state = [], action) => {
+  if (action.type === "SET_STUDENTS") {
+    return action.students;
+  }
+  if (action.type === "DELETE_STUDENT") {
+    return state.filter((student) => student.id !== action.student.id);
+  }
+  if (action.type === "CREATE_STUDENT") {
+    return [...state, action.student];
+  }
+  return state;
+};
+
 const reducer = combineReducers({
   campuses,
+  students,
 });
 
 const _setCampuses = (campuses) => {
@@ -34,6 +48,20 @@ const _deleteCampus = (campus) => {
   };
 };
 
+const _setStudents = (students) => {
+  return {
+    type: "SET_STUDENTS",
+    students,
+  };
+};
+
+const _deleteStudent = (student) => {
+  return {
+    type: "DELETE_STUDENT",
+    student,
+  };
+};
+
 export const fetchCampuses = () => {
   return async (dispatch) => {
     const response = await axios.get("/api/campuses");
@@ -45,6 +73,20 @@ export const deleteCampus = (campus) => {
   return async (dispatch) => {
     await axios.delete(`/api/campuses/${campus.id}`);
     dispatch(_deleteCampus(campus));
+  };
+};
+
+export const fetchStudents = () => {
+  return async (dispatch) => {
+    const response = await axios.get("/api/students");
+    dispatch(_setStudents(response.data));
+  };
+};
+
+export const deleteStudent = (student) => {
+  return async (dispatch) => {
+    await axios.delete(`/api/students/${student.id}`);
+    dispatch(_deleteStudent(student));
   };
 };
 
