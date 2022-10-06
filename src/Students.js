@@ -8,28 +8,35 @@ const Students = () => {
   const dispatch = useDispatch();
 
   return (
-    <ul>
-      {students.map((student) => {
-        const campus = campuses.find(
-          (campus) => campus.id === student.campusId
-        );
+    <div className="container">
+      <div>
+        <h3>Student Listing</h3>
+        <ul>
+          {students.map((student) => {
+            const campus = campuses.find(
+              (campus) => campus.id === student.campusId
+            );
 
-        return (
-          <li key={student.id}>
-            {student.firstName} {student.lastName}
-            {campus ? <span> attends {campus.name}</span> : null}{" "}
-            <Link to={`/students/${student.id}`}>Student Detail</Link>{" "}
-            <button
-              onClick={() => {
-                dispatch(deleteStudent(student));
-              }}
-            >
-              Delete
-            </button>
-          </li>
-        );
-      })}
-    </ul>
+            return (
+              <li key={student.id}>
+                <b>
+                  {student.firstName} {student.lastName}
+                </b>
+                {campus ? <span> (attends {campus.name})</span> : null} <br />
+                <Link to={`/students/${student.id}`}>Student Detail</Link>{" "}
+                <button
+                  onClick={() => {
+                    dispatch(deleteStudent(student));
+                  }}
+                >
+                  x
+                </button>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </div>
   );
 };
 

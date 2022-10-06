@@ -15,22 +15,30 @@ const Student = db.define("student", {
     type: STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
+      notEmpty: {
+        msg: "Student requires a first name",
+      },
     },
   },
   lastName: {
     type: STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
+      notEmpty: {
+        msg: "Student requires a last name",
+      },
     },
   },
   email: {
     type: STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
-      isEmail: true,
+      notEmpty: {
+        msg: "Student requires an email address",
+      },
+      isEmail: {
+        msg: "Provide a valid email address",
+      },
     },
   },
   imageUrl: {
@@ -58,21 +66,22 @@ const Campus = db.define("campus", {
     type: STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
-    },
-  },
-  imageUrl: {
-    type: STRING,
-    validate: {
-      isUrl: true,
+      notEmpty: {
+        msg: "Campus requires a name",
+      },
     },
   },
   address: {
     type: STRING,
     allowNull: false,
     validate: {
-      notEmpty: true,
+      notEmpty: {
+        msg: "Campus requires an address",
+      },
     },
+  },
+  imageUrl: {
+    type: STRING,
   },
   description: {
     type: TEXT,
@@ -87,22 +96,22 @@ const seed = async () => {
     Campus.create({
       name: "Hogwarts",
       address: "Undisclosed, Scotland",
-      description: "Hogwarts blah blah...",
+      description: "Hogwarts School [...]",
     }),
     Campus.create({
       name: "Durmstung",
       address: "Undisclosed, Germany",
-      description: "Durmstrung blah blah...",
+      description: "Durmstrang Institute [...]",
     }),
     Campus.create({
       name: "Beauxbatons",
       address: "Undisclosed, France",
-      description: "Beauxbatons blah blah...",
+      description: "Beauxbatons Academy [...]",
     }),
     Campus.create({
       name: "Brakebills",
       address: "Undisclosed, USA",
-      description: "Brakebill blah blah...",
+      description: "Brakebills University [...]",
     }),
   ]);
   return Promise.all([

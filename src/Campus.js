@@ -9,27 +9,32 @@ const Campus = () => {
   const enrollees = students.filter((student) => student.campusId === id) || [];
 
   return (
-    <div>
-      <img src={campus.imageUrl}></img>
-      <ul>
-        <li> Name: {campus.name} </li>
-        <li> Address: {campus.address} </li>
-        <li> Description: {campus.description} </li>
-      </ul>
-      <h2>Student List</h2>
-      <ul>
-        {enrollees.length > 0
-          ? enrollees.map((enrollee) => {
-              return (
-                <li key={enrollee.id}>
-                  <Link to={`/students/${enrollee.id}`}>
-                    {enrollee.firstName} {enrollee.lastName}
-                  </Link>
-                </li>
-              );
-            })
-          : "No enrollee"}
-      </ul>
+    <div className="container">
+      <div>
+        <h3>Campus Detail</h3>
+        <img src={campus.imageUrl}></img>
+        <ul>
+          <li> Name: {campus.name} </li>
+          <li> Address: {campus.address} </li>
+          <li> Description: {campus.description} </li>
+        </ul>
+      </div>
+      <div>
+        <h3>Student List</h3>
+        <ul>
+          {enrollees.length > 0
+            ? enrollees.map((enrollee) => {
+                return (
+                  <li key={enrollee.id}>
+                    <Link to={`/students/${enrollee.id}`}>
+                      {enrollee.firstName} {enrollee.lastName}
+                    </Link>
+                  </li>
+                );
+              })
+            : "No enrollee"}
+        </ul>
+      </div>
     </div>
   );
 };

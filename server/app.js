@@ -19,6 +19,14 @@ app.get("/api/campuses", async (req, res, next) => {
   }
 });
 
+app.post("/api/campuses", async (req, res, next) => {
+  try {
+    res.send(await Campus.create(req.body));
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 app.delete("/api/campuses/:id", async (req, res, next) => {
   try {
     const campus = await Campus.findByPk(req.params.id);

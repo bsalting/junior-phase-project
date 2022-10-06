@@ -18,7 +18,7 @@ const App = () => {
 
   return (
     <div>
-      <nav>
+      <nav id="nav">
         <Link to="/">Home</Link>
         <Link to="/campuses">Campuses ({campuses.length})</Link>
         <Link to="/students">Students ({students.length})</Link>

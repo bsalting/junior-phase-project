@@ -48,6 +48,13 @@ const _deleteCampus = (campus) => {
   };
 };
 
+const _createCampus = (campus) => {
+  return {
+    type: "CREATE_CAMPUS",
+    campus,
+  };
+};
+
 const _setStudents = (students) => {
   return {
     type: "SET_STUDENTS",
@@ -73,6 +80,15 @@ export const deleteCampus = (campus) => {
   return async (dispatch) => {
     await axios.delete(`/api/campuses/${campus.id}`);
     dispatch(_deleteCampus(campus));
+  };
+};
+
+export const createCampus = (campus) => {
+  return async (dispatch) => {
+    console.log(campus);
+    const response = await axios.post("/api/campuses", campus);
+    console.log("create done");
+    dispatch(_createCampus(response.data));
   };
 };
 
