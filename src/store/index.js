@@ -13,6 +13,11 @@ const campuses = (state = [], action) => {
   if (action.type === "CREATE_CAMPUS") {
     return [...state, action.campus];
   }
+  if (action.type === "UPDATE_CAMPUS") {
+    return state.map((campus) => {
+      campus.id === action.campus.id ? action.campus : campus;
+    });
+  }
   return state;
 };
 
@@ -25,6 +30,11 @@ const students = (state = [], action) => {
   }
   if (action.type === "CREATE_STUDENT") {
     return [...state, action.student];
+  }
+  if (action.type === "UPDATE_STUDENT") {
+    return state.map((student) =>
+      student.id === action.student.id ? action.student : student
+    );
   }
   return state;
 };
@@ -44,6 +54,13 @@ const _setCampuses = (campuses) => {
 const _deleteCampus = (campus) => {
   return {
     type: "DELETE_CAMPUS",
+    campus,
+  };
+};
+
+const _updateCampus = (campus) => {
+  return {
+    type: "UPDATE_CAMPUS",
     campus,
   };
 };
@@ -72,6 +89,13 @@ const _deleteStudent = (student) => {
 const _createStudent = (student) => {
   return {
     type: "CREATE_STUDENT",
+    student,
+  };
+};
+
+const _updateStudent = (student) => {
+  return {
+    type: "UPDATE_STUDENT",
     student,
   };
 };
@@ -113,10 +137,15 @@ export const deleteStudent = (student) => {
 
 export const createStudent = (student) => {
   return async (dispatch) => {
-    console.log(student);
     const response = await axios.post("/api/students", student);
-    console.log("done create");
     dispatch(_createStudent(response.data));
+  };
+};
+
+export const updateStudent = (student) => {
+  return async (dispatch) => {
+    const response = await axios.put(`/api/students/${student.id}`, student);
+    dispatch(_updateStudent(response.data));
   };
 };
 

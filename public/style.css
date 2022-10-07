@@ -16,13 +16,13 @@ nav {
 }
 
 img {
-  margin: 0 10px 0 40px;
-  width: 6vw;
-  height: 6vw;
+  margin: 0 20px 0 0;
+  width: 7vw;
+  height: 7vw;
 }
 
 li {
-  margin-bottom: 20px;
+  margin-top: 25px;
   list-style: none;
 }
 
@@ -32,7 +32,7 @@ li {
 }
 
 .li-compact {
-  margin-bottom: 7px;
+  margin: 10px;
   list-style: disc;
 }
 
@@ -50,4 +50,14 @@ select {
 
 .form-button {
   margin-top: 10px;
+}
+
+.enrollee-fl {
+  float: left;
+  margin-right: 10px;
+}
+
+.enrollee-fr {
+  float: right;
+  margin-left: 10px;
 }

@@ -21,7 +21,7 @@ app.get("/api/campuses", async (req, res, next) => {
 
 app.post("/api/campuses", async (req, res, next) => {
   try {
-    res.send(await Campus.create(req.body));
+    res.status(201).send(await Campus.create(req.body));
   } catch (ex) {
     next(ex);
   }
@@ -58,6 +58,16 @@ app.delete("/api/students/:id", async (req, res, next) => {
     const student = await Student.findByPk(req.params.id);
     await student.destroy();
     res.sendStatus(204);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
+app.put("/api/students/:id", async (req, res, next) => {
+  try {
+    const student = await Student.findByPk(req.params.id);
+    await student.update(req.body);
+    res.status(200).send(student);
   } catch (ex) {
     next(ex);
   }
