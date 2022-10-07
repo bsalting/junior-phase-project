@@ -13,21 +13,22 @@ const Campus = () => {
     <div className="container">
       <div>
         <h3>Campus Detail</h3>
-        <img src={campus.imageUrl}></img>
         <ul>
-          <li> {campus.name} </li>
+          <li>
+            <h4>{campus.name}</h4>
+          </li>
         </ul>
         <div>
           <CampusUpdate />
         </div>
       </div>
       <div>
-        <h3>Student List</h3>
+        <h3>Enrollee List</h3>
         <ul>
           {enrollees.length > 0
             ? enrollees.map((enrollee) => {
                 return (
-                  <li key={enrollee.id}>
+                  <li key={enrollee.id} className="li-compact">
                     <Link to={`/students/${enrollee.id}`}>
                       {enrollee.firstName} {enrollee.lastName}
                     </Link>

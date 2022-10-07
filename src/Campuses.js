@@ -19,18 +19,29 @@ const Campuses = () => {
             );
             return (
               <li key={campus.id}>
-                <b>{campus.name}</b> ({enrollees.length}
-                {enrollees.length > 1 ? " enrollments" : " enrollment"}) <br />
-                {campus.address} <br />
-                {campus.description} <br />
-                <Link to={`/campuses/${campus.id}`}>Update Details</Link>{" "}
-                <button
-                  onClick={() => {
-                    dispatch(deleteCampus(campus));
-                  }}
-                >
-                  x
-                </button>
+                <div id="li-campuses">
+                  <div>
+                    <img src={campus.imageUrl}></img>
+                  </div>
+                  <div>
+                    <b>{campus.name}</b> ({enrollees.length}
+                    {enrollees.length > 1
+                      ? " enrollments"
+                      : " enrollment"}) <br />
+                    {campus.address} <br />
+                    {campus.description} <br />
+                    <Link to={`/campuses/${campus.id}`}>
+                      Update Details
+                    </Link>{" "}
+                    <button
+                      onClick={() => {
+                        dispatch(deleteCampus(campus));
+                      }}
+                    >
+                      x
+                    </button>
+                  </div>
+                </div>
               </li>
             );
           })}

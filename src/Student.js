@@ -11,7 +11,6 @@ const Student = () => {
 
   return (
     <div>
-      <img src={student.imageUrl}></img>
       <ul>
         <li>
           {student.firstName}

@@ -20,24 +20,34 @@ const Students = () => {
 
             return (
               <li key={student.id}>
-                <b>
-                  {student.firstName} {student.lastName}
-                </b>
-                <br />
-                Email: {student.email}
-                <br />
-                Campus: {campus ? <span> {campus.name} </span> : "Not enrolled"}
-                <br />
-                GPA: {student.gpa}
-                <br />
-                <Link to={`/students/${student.id}`}>Update Details</Link>{" "}
-                <button
-                  onClick={() => {
-                    dispatch(deleteStudent(student));
-                  }}
-                >
-                  x
-                </button>
+                <div id="li-students">
+                  <div>
+                    <img src={student.imageUrl}></img>
+                  </div>
+                  <div>
+                    <b>
+                      {student.firstName} {student.lastName}
+                    </b>
+                    <br />
+                    Email: {student.email}
+                    <br />
+                    Campus:{" "}
+                    {campus ? <span> {campus.name} </span> : "Not enrolled"}
+                    <br />
+                    GPA: {student.gpa}
+                    <br />
+                    <Link to={`/students/${student.id}`}>
+                      Update Details
+                    </Link>{" "}
+                    <button
+                      onClick={() => {
+                        dispatch(deleteStudent(student));
+                      }}
+                    >
+                      x
+                    </button>
+                  </div>
+                </div>
               </li>
             );
           })}

@@ -52,8 +52,7 @@ const CampusCreate = () => {
           disabled={!inputs.name || !inputs.address}
           className="form-button"
         >
-          {" "}
-          Create{" "}
+          Create
         </button>
       </form>
     </div>
