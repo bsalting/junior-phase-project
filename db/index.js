@@ -125,7 +125,7 @@ const seed = async () => {
     }),
     Student.create({
       firstName: "Hermione",
-      lastName: "Grange",
+      lastName: "Granger",
       email: "hg@hogwarts.edu",
       gpa: 4,
       campusId: hogwarts.id,

@@ -63,7 +63,12 @@ const StudentCreate = () => {
         </select>
         <br />
         <button
-          disabled={!inputs.firstName || !inputs.lastName || !inputs.email}
+          disabled={
+            !inputs.firstName ||
+            !inputs.lastName ||
+            !inputs.email ||
+            !inputs.campusId
+          }
         >
           Create
         </button>
