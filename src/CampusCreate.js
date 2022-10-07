@@ -3,13 +3,13 @@ import { useDispatch } from "react-redux";
 import { createCampus } from "./store";
 
 const CampusCreate = () => {
+  const dispatch = useDispatch();
   const [inputs, setInputs] = useState({
     name: "",
     address: "",
     imageUrl: "",
     description: "",
   });
-  const dispatch = useDispatch();
 
   const onChange = (ev) => {
     setInputs({ ...inputs, [ev.target.name]: ev.target.value });
@@ -18,17 +18,23 @@ const CampusCreate = () => {
   const save = (ev) => {
     ev.preventDefault();
     dispatch(createCampus(inputs));
+    setInputs({
+      name: "",
+      imageUrl: "",
+      address: "",
+      description: "",
+    });
   };
 
   return (
     <div>
       <h3>Create Campus</h3>
       <form onSubmit={save}>
-        <label> Name </label>
-        <input name="name" value={inputs.name} onChange={onChange} />*
+        <label> Name *</label>
+        <input name="name" value={inputs.name} onChange={onChange} />
         <br />
-        <label> Address </label>
-        <input name="address" value={inputs.address} onChange={onChange} />*
+        <label> Address *</label>
+        <input name="address" value={inputs.address} onChange={onChange} />
         <br />
         <label> Image URL </label>
         <input name="imageUrl" value={inputs.imageUrl} onChange={onChange} />

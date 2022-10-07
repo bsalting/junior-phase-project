@@ -43,9 +43,6 @@ const Student = db.define("student", {
   },
   imageUrl: {
     type: STRING,
-    validate: {
-      isUrl: true,
-    },
   },
   gpa: {
     type: DECIMAL,
@@ -97,6 +94,8 @@ const seed = async () => {
       name: "Hogwarts",
       address: "Undisclosed, Scotland",
       description: "Hogwarts School [...]",
+      imageUrl:
+        "https://1000logos.net/wp-content/uploads/2021/04/Hogwarts-Logo-1536x864.png",
     }),
     Campus.create({
       name: "Durmstung",
@@ -156,6 +155,7 @@ const seed = async () => {
       firstName: "Rubeus",
       lastName: "Hagrid",
       email: "rh@gmail.edu",
+      campusId: null,
     }),
   ]);
 };

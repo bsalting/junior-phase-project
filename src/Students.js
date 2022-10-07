@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteStudent } from "./store";
 import { Link } from "react-router-dom";
+import StudentCreate from "./StudentCreate";
 
 const Students = () => {
   const { students, campuses } = useSelector((state) => state);
@@ -35,6 +36,9 @@ const Students = () => {
             );
           })}
         </ul>
+      </div>
+      <div>
+        <StudentCreate />
       </div>
     </div>
   );

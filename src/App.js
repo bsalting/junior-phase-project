@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCampuses, fetchStudents } from "./store";
+import Home from "./Home";
 import Campuses from "./Campuses";
 import Campus from "./Campus";
 import Students from "./Students";
@@ -24,7 +25,7 @@ const App = () => {
         <Link to="/students">Students ({students.length})</Link>
       </nav>
       <Routes>
-        <Route path="/" element={<div>This is home page</div>} />
+        <Route path="/" element={<Home />} />
         <Route path="/campuses" element={<Campuses />} />
         <Route path="/campuses/:id" element={<Campus />} />
         <Route path="/students" element={<Students />} />
