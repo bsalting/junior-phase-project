@@ -22,7 +22,7 @@ const Students = () => {
               <li key={student.id}>
                 <div id="li-students">
                   <div>
-                    <img src={student.imageUrl}></img>
+                    <img src={student.imageUrl} alt="Not on file"></img>
                   </div>
                   <div>
                     <b>
