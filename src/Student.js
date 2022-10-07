@@ -14,16 +14,12 @@ const Student = () => {
       <img src={student.imageUrl}></img>
       <ul>
         <li>
-          Name: {student.firstName} {student.lastName}
-        </li>
-        <li> Email: {student.email}</li>
-        <li> GPA: {student.gpa}</li>
-        <li>
-          Campus:
+          {student.firstName}
+          {student.lastName}{" "}
           {campus.id ? (
-            <Link to={`/campuses/${campus.id}`}>{campus.name}</Link>
+            <Link to={`/campuses/${campus.id}`}> ({campus.name}) </Link>
           ) : (
-            "Not enrolled"
+            "(Not enrolled)"
           )}
         </li>
       </ul>

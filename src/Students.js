@@ -23,8 +23,14 @@ const Students = () => {
                 <b>
                   {student.firstName} {student.lastName}
                 </b>
-                {campus ? <span> (attends {campus.name})</span> : null} <br />
-                <Link to={`/students/${student.id}`}>Student Detail</Link>{" "}
+                <br />
+                Email: {student.email}
+                <br />
+                Campus: {campus ? <span> {campus.name} </span> : "Not enrolled"}
+                <br />
+                GPA: {student.gpa}
+                <br />
+                <Link to={`/students/${student.id}`}>Update Details</Link>{" "}
                 <button
                   onClick={() => {
                     dispatch(deleteStudent(student));

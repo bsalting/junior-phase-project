@@ -25,3 +25,19 @@ li {
   margin-bottom: 20px;
   list-style: none;
 }
+
+label {
+  width: 100px;
+  text-align: left;
+  display: inline-block;
+}
+
+input,
+select {
+  width: 200px;
+  margin-bottom: 10px;
+}
+
+.form-button {
+  margin-top: 10px;
+}

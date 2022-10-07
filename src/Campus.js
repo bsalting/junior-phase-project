@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
+import CampusUpdate from "./CampusUpdate";
 
 const Campus = () => {
   const { id } = useParams();
@@ -14,10 +15,11 @@ const Campus = () => {
         <h3>Campus Detail</h3>
         <img src={campus.imageUrl}></img>
         <ul>
-          <li> Name: {campus.name} </li>
-          <li> Address: {campus.address} </li>
-          <li> Description: {campus.description} </li>
+          <li> {campus.name} </li>
         </ul>
+        <div>
+          <CampusUpdate />
+        </div>
       </div>
       <div>
         <h3>Student List</h3>

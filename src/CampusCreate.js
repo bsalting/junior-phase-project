@@ -30,11 +30,13 @@ const CampusCreate = () => {
     <div>
       <h3>Create Campus</h3>
       <form onSubmit={save}>
-        <label> Name *</label>
+        <label> Name </label>
         <input name="name" value={inputs.name} onChange={onChange} />
+        {" *"}
         <br />
-        <label> Address *</label>
+        <label> Address </label>
         <input name="address" value={inputs.address} onChange={onChange} />
+        {" *"}
         <br />
         <label> Image URL </label>
         <input name="imageUrl" value={inputs.imageUrl} onChange={onChange} />
@@ -46,7 +48,13 @@ const CampusCreate = () => {
           onChange={onChange}
         />
         <br />
-        <button disabled={!inputs.name || !inputs.address}> Create </button>
+        <button
+          disabled={!inputs.name || !inputs.address}
+          className="form-button"
+        >
+          {" "}
+          Create{" "}
+        </button>
       </form>
     </div>
   );

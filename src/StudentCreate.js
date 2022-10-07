@@ -11,7 +11,7 @@ const StudentCreate = () => {
     email: "",
     imageUrl: "",
     gpa: 0.0,
-    campusId: "",
+    campusId: null,
   });
 
   const onChange = (ev) => {
@@ -27,7 +27,7 @@ const StudentCreate = () => {
       email: "",
       imageUrl: "",
       gpa: 0.0,
-      campusId: "",
+      campusId: null,
     });
   };
 
@@ -35,14 +35,17 @@ const StudentCreate = () => {
     <div>
       <h3>Create Student</h3>
       <form onSubmit={save}>
-        <label> First Name *</label>
+        <label> First Name </label>
         <input name="firstName" value={inputs.firstName} onChange={onChange} />
+        {" *"}
         <br />
-        <label> Last Name *</label>
+        <label> Last Name </label>
         <input name="lastName" value={inputs.lastName} onChange={onChange} />
+        {" *"}
         <br />
-        <label> Email Address *</label>
+        <label> Email </label>
         <input name="email" value={inputs.email} onChange={onChange} />
+        {" *"}
         <br />
         <label> Image URL </label>
         <input name="imageUrl" value={inputs.imageUrl} onChange={onChange} />
@@ -50,7 +53,7 @@ const StudentCreate = () => {
         <label> GPA </label>
         <input name="gpa" value={inputs.gpa} onChange={onChange} />
         <br />
-        <label> Campus *</label>
+        <label> Campus </label>
         <select name="campusId" value={inputs.campusId} onChange={onChange}>
           <option value=""> Select... </option>
           {campuses.map((campus) => {
@@ -63,12 +66,8 @@ const StudentCreate = () => {
         </select>
         <br />
         <button
-          disabled={
-            !inputs.firstName ||
-            !inputs.lastName ||
-            !inputs.email ||
-            !inputs.campusId
-          }
+          className="form-button"
+          disabled={!inputs.firstName || !inputs.lastName || !inputs.email}
         >
           Create
         </button>

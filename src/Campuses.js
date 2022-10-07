@@ -21,7 +21,9 @@ const Campuses = () => {
               <li key={campus.id}>
                 <b>{campus.name}</b> ({enrollees.length}
                 {enrollees.length > 1 ? " enrollments" : " enrollment"}) <br />
-                <Link to={`/campuses/${campus.id}`}>Campus Details</Link>{" "}
+                {campus.address} <br />
+                {campus.description} <br />
+                <Link to={`/campuses/${campus.id}`}>Update Details</Link>{" "}
                 <button
                   onClick={() => {
                     dispatch(deleteCampus(campus));
