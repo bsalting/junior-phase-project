@@ -13,11 +13,7 @@ const Campus = () => {
     <div className="container">
       <div>
         <h3>Campus Detail</h3>
-        <ul>
-          <li>
-            <h4>{campus.name}</h4>
-          </li>
-        </ul>
+        <h4>{campus.name}</h4>
         <div>
           <CampusUpdate />
         </div>

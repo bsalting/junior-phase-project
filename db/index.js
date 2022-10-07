@@ -95,22 +95,27 @@ const seed = async () => {
       address: "Undisclosed, Scotland",
       description: "Hogwarts School [...]",
       imageUrl:
-        "https://1000logos.net/wp-content/uploads/2021/04/Hogwarts-Logo-1536x864.png",
+        "https://hogwarts.io/images/avatars/upload/75c1eced7014a4bc935f4d1340b1dda1_1885.jpg?u=20181212",
     }),
     Campus.create({
       name: "Durmstung",
       address: "Undisclosed, Germany",
       description: "Durmstrang Institute [...]",
+      imageUrl: "https://hogwarts.io/files/ca6ddc809e98061e.png",
     }),
     Campus.create({
       name: "Beauxbatons",
       address: "Undisclosed, France",
       description: "Beauxbatons Academy [...]",
+      imageUrl:
+        "https://i.pinimg.com/474x/a9/a0/fe/a9a0fef70adad2ed4e1ef2cb6dc0f779.jpg",
     }),
     Campus.create({
       name: "Brakebills",
       address: "Undisclosed, USA",
       description: "Brakebills University [...]",
+      imageUrl:
+        "https://preview.redd.it/c4ql03a7vw061.png?width=679&format=png&auto=webp&s=89ab06ffe64814d619e66e92113542acf7b24b0e",
     }),
   ]);
   return Promise.all([
@@ -118,10 +123,10 @@ const seed = async () => {
       firstName: "Harry",
       lastName: "Potter",
       email: "hp@hogwarts.edu",
-      imageUrl:
-        "https://images.ctfassets.net/usf1vwtuqyxm/3SQ3X2km8wkQIsQWa02yOY/8801d7055a3e99dae8e60f54bb4b1db8/HarryPotter_WB_F4_HarryPotterMidshot_Promo_080615_Port.jpg?w=914&q=70&fm=jpg",
       gpa: 3,
       campusId: hogwarts.id,
+      imageUrl:
+        "https://media.harrypotterfanzone.com/harry-potter-goblet-of-fire-first-task-portrait.jpg",
     }),
     Student.create({
       firstName: "Hermione",
@@ -129,6 +134,8 @@ const seed = async () => {
       email: "hg@hogwarts.edu",
       gpa: 4,
       campusId: hogwarts.id,
+      imageUrl:
+        "http://images4.fanpop.com/image/photos/24400000/Hermione-Granger-Wallpaper-hermione-granger-24489407-1024-768.jpg",
     }),
     Student.create({
       firstName: "Ron",
@@ -136,6 +143,8 @@ const seed = async () => {
       email: "rw@hogwarts.edu",
       gpa: 2,
       campusId: hogwarts.id,
+      imageUrl:
+        "https://media.harrypotterfanzone.com/ron-weasley-order-of-the-phoenix-portrait.jpg",
     }),
     Student.create({
       firstName: "Victor",
@@ -143,6 +152,8 @@ const seed = async () => {
       email: "vk@durmstrung.edu",
       gpa: 3,
       campusId: durmstrung.id,
+      imageUrl:
+        "https://openpsychometrics.org/tests/characters/test-resources/pics/HP/15.jpg",
     }),
     Student.create({
       firstName: "Fleur",
@@ -150,12 +161,16 @@ const seed = async () => {
       email: "fd@beauxbatons.edu",
       gpa: 4,
       campusId: beauxbatons.id,
+      imageUrl:
+        "https://media.harrypotterfanzone.com/fleur-delacour-goblet-of-fire-third-task-portrait-3.jpg",
     }),
     Student.create({
-      firstName: "Rubeus",
-      lastName: "Hagrid",
-      email: "rh@gmail.edu",
+      firstName: "Cedric",
+      lastName: "Diggory",
+      email: "cd@hogwarts.edu",
       campusId: null,
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8uB9XDBdLioDJTwdSxh6wMAuG-0PPWyELIg&usqp=CAU",
     }),
   ]);
 };

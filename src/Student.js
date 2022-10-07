@@ -10,18 +10,18 @@ const Student = () => {
     campuses.find((campus) => campus.id === student.campusId) || {};
 
   return (
-    <div>
-      <ul>
-        <li>
-          {student.firstName}
-          {student.lastName}{" "}
+    <div className="container">
+      <div>
+        <h3>Student Detail</h3>
+        <h4>
+          {student.firstName} {student.lastName}{" "}
           {campus.id ? (
             <Link to={`/campuses/${campus.id}`}> ({campus.name}) </Link>
           ) : (
             "(Not enrolled)"
           )}
-        </li>
-      </ul>
+        </h4>
+      </div>
     </div>
   );
 };
