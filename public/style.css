@@ -11,8 +11,38 @@ nav {
 
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin: 2rem 0 2rem 0;
+}
+
+#campuses-panel-l {
+  flex: 1;
+  margin: 0 0 0 20%;
+}
+
+#campuses-panel-r {
+  flex: 1;
+  margin: 0 10% 0 0;
+}
+
+#campus-panel-l {
+  flex: 1;
+  margin: 0 0 0 20%;
+}
+
+#campus-panel-r {
+  flex: 1;
+  margin: 0 20% 0 0;
+}
+
+#students-panel-l {
+  flex: 1;
+  margin: 0 0 0 20%;
+}
+
+#students-panel-r {
+  flex: 1;
+  margin: 0 10% 0 0;
 }
 
 img {
@@ -42,22 +72,25 @@ label {
   display: inline-block;
 }
 
-input,
-select {
+input {
   width: 200px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+select {
+  width: 208px;
+  height: 23px;
+  margin-bottom: 15px;
 }
 
 .form-button {
-  margin-top: 10px;
+  margin: 10px 0 0 250px;
 }
 
 .enrollee-fl {
   float: left;
-  margin-right: 10px;
 }
 
 .enrollee-fr {
   float: right;
-  margin-left: 10px;
 }

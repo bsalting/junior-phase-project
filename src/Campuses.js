@@ -10,7 +10,7 @@ const Campuses = () => {
 
   return (
     <div className="container">
-      <div className="panel">
+      <div id="campuses-panel-l">
         <h3>Campus Listing</h3>
         <ul>
           {campuses.map((campus) => {
@@ -47,7 +47,7 @@ const Campuses = () => {
           })}
         </ul>
       </div>
-      <div className="panel">
+      <div id="campuses-panel-r">
         <CampusCreate />
       </div>
     </div>

@@ -10,7 +10,7 @@ const Students = () => {
 
   return (
     <div className="container">
-      <div>
+      <div id="students-panel-l">
         <h3>Student Listing</h3>
         <ul>
           {students.map((student) => {
@@ -22,7 +22,7 @@ const Students = () => {
               <li key={student.id}>
                 <div id="li-students">
                   <div>
-                    <img src={student.imageUrl} alt="Not on file"></img>
+                    <img src={student.imageUrl} alt="No photo.."></img>
                   </div>
                   <div>
                     <b>
@@ -53,7 +53,7 @@ const Students = () => {
           })}
         </ul>
       </div>
-      <div>
+      <div id="students-panel-r">
         <StudentCreate />
       </div>
     </div>

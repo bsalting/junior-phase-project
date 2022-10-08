@@ -28,14 +28,14 @@ const Campus = () => {
 
   return (
     <div className="container">
-      <div>
+      <div id="campus-panel-l">
         <h3>Campus Detail</h3>
         <h4>{inputs.name}</h4>
         <div>
           <CampusUpdate />
         </div>
       </div>
-      <div>
+      <div id="campus-panel-r">
         <h3>Enrollee List</h3>
         <ul>
           {inputs.students.length > 0
