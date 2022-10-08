@@ -44,7 +44,9 @@ const Campus = () => {
                   <li key={student.id} className="li-compact">
                     <span className="enrollee-fl">
                       <Link to={`/students/${student.id}`}>
-                        {student.firstName} {student.lastName}
+                        {student.firstName
+                          .concat(" ", student.lastName)
+                          .substring(0, 30)}
                       </Link>
                     </span>
                     <span className="enrollee-fr">

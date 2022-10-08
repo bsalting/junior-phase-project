@@ -26,7 +26,9 @@ const Students = () => {
                   </div>
                   <div>
                     <b>
-                      {student.firstName} {student.lastName}
+                      {student.firstName
+                        .concat(" ", student.lastName)
+                        .substring(0, 25)}
                     </b>
                     <br />
                     Email: {student.email}

@@ -100,22 +100,28 @@ const seed = async () => {
     Campus.create({
       name: "Durmstung",
       address: "Undisclosed, Germany",
-      description: "Durmstrang Institute [...]",
+      description: "Durmstrang Institute...",
       imageUrl: "https://hogwarts.io/files/ca6ddc809e98061e.png",
     }),
     Campus.create({
       name: "Beauxbatons",
       address: "Undisclosed, France",
-      description: "Beauxbatons Academy [...]",
+      description: "Beauxbatons Academy...",
       imageUrl:
         "https://i.pinimg.com/474x/a9/a0/fe/a9a0fef70adad2ed4e1ef2cb6dc0f779.jpg",
     }),
     Campus.create({
       name: "Brakebills",
       address: "Undisclosed, USA",
-      description: "Brakebills University [...]",
+      description: "Brakebills School...",
       imageUrl:
         "https://preview.redd.it/c4ql03a7vw061.png?width=679&format=png&auto=webp&s=89ab06ffe64814d619e66e92113542acf7b24b0e",
+    }),
+    Campus.create({
+      name: "Brakebills South",
+      address: "Undisclosed, North Pole",
+      description: "Brakebills Satellite...",
+      imageUrl: "https://i.redd.it/8tf149hlbdb41.jpg",
     }),
   ]);
   return Promise.all([

@@ -74,13 +74,13 @@ label {
 
 input {
   width: 200px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 select {
   width: 208px;
   height: 23px;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .form-button {
