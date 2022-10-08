@@ -37,6 +37,16 @@ app.delete("/api/campuses/:id", async (req, res, next) => {
   }
 });
 
+app.put("/api/campus/:id", async (req, res, next) => {
+  try {
+    const campus = await Campus.findByPk(req.params.id);
+    await campus.update(req.body);
+    res.status(200).send(campus);
+  } catch (ex) {
+    next(ex);
+  }
+});
+
 app.get("/api/students", async (req, res, next) => {
   try {
     res.send(await Student.findAll());

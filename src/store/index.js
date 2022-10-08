@@ -14,9 +14,9 @@ const campuses = (state = [], action) => {
     return [...state, action.campus];
   }
   if (action.type === "UPDATE_CAMPUS") {
-    return state.map((campus) => {
-      campus.id === action.campus.id ? action.campus : campus;
-    });
+    return state.map((campus) =>
+      campus.id === action.campus.id ? action.campus : campus
+    );
   }
   return state;
 };
@@ -118,6 +118,13 @@ export const createCampus = (campus) => {
   return async (dispatch) => {
     const response = await axios.post("/api/campuses", campus);
     dispatch(_createCampus(response.data));
+  };
+};
+
+export const updateCampus = (campus) => {
+  return async (dispatch) => {
+    const response = await axios.put(`/api/campus/${campus.id}`, campus);
+    dispatch(_updateCampus(response.data));
   };
 };
 
