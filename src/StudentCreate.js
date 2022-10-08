@@ -37,16 +37,13 @@ const StudentCreate = () => {
       <form onSubmit={save}>
         <label> First Name </label>
         <input name="firstName" value={inputs.firstName} onChange={onChange} />
-        {" *"}
-        <br />
+        &bull; <br />
         <label> Last Name </label>
         <input name="lastName" value={inputs.lastName} onChange={onChange} />
-        {" *"}
-        <br />
+        &bull; <br />
         <label> Email </label>
         <input name="email" value={inputs.email} onChange={onChange} />
-        {" *"}
-        <br />
+        &bull; <br />
         <label> Image URL </label>
         <input name="imageUrl" value={inputs.imageUrl} onChange={onChange} />
         <br />

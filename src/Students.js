@@ -11,7 +11,7 @@ const Students = () => {
   return (
     <div className="container">
       <div id="students-panel-l">
-        <h3>Student Listing</h3>
+        <h3>Student Roster</h3>
         <ul>
           {students.map((student) => {
             const campus = campuses.find(
@@ -46,7 +46,7 @@ const Students = () => {
                         dispatch(deleteStudent(student));
                       }}
                     >
-                      x
+                      <b>X</b>
                     </button>
                   </div>
                 </div>

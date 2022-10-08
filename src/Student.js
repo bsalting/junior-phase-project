@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useParams, Link } from "react-router-dom";
+import StudentUpdate from "./StudentUpdate";
 
 const Student = () => {
   const { students, campuses } = useSelector((state) => state);
@@ -12,15 +13,15 @@ const Student = () => {
   return (
     <div className="container">
       <div>
-        <h3>Student Detail</h3>
-        <h4>
+        <h3>
           {student.firstName} {student.lastName}{" "}
           {campus.id ? (
             <Link to={`/campuses/${campus.id}`}> ({campus.name}) </Link>
           ) : (
             "(Not enrolled)"
           )}
-        </h4>
+        </h3>
+        <StudentUpdate />
       </div>
     </div>
   );

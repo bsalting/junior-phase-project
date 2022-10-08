@@ -29,14 +29,13 @@ const Campus = () => {
   return (
     <div className="container">
       <div id="campus-panel-l">
-        <h3>Campus Detail</h3>
-        <h4>{inputs.name}</h4>
+        <h3>{inputs.name}</h3>
         <div>
           <CampusUpdate />
         </div>
       </div>
       <div id="campus-panel-r">
-        <h3>Enrollee List</h3>
+        <h3>Enrollee Roster</h3>
         <ul>
           {inputs.students.length > 0
             ? inputs.students.map((student) => {

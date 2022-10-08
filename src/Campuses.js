@@ -11,7 +11,7 @@ const Campuses = () => {
   return (
     <div className="container">
       <div id="campuses-panel-l">
-        <h3>Campus Listing</h3>
+        <h3>Campus Roster</h3>
         <ul>
           {campuses.map((campus) => {
             const enrollees = students.filter(
@@ -21,7 +21,7 @@ const Campuses = () => {
               <li key={campus.id}>
                 <div id="li-campuses">
                   <div>
-                    <img src={campus.imageUrl}></img>
+                    <img src={campus.imageUrl} alt="No photo.."></img>
                   </div>
                   <div>
                     <b>{campus.name}</b> ({enrollees.length}
@@ -38,7 +38,7 @@ const Campuses = () => {
                         dispatch(deleteCampus(campus));
                       }}
                     >
-                      x
+                      <b>X</b>
                     </button>
                   </div>
                 </div>

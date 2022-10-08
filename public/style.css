@@ -11,7 +11,8 @@ nav {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: flex-start;
   margin: 2rem 0 2rem 0;
 }
 
@@ -63,7 +64,7 @@ li {
 
 .li-compact {
   margin: 10px;
-  list-style: disc;
+  list-style: circle;
 }
 
 label {
@@ -85,6 +86,14 @@ select {
 
 .form-button {
   margin: 10px 0 0 250px;
+}
+
+.form-button2a {
+  margin: 10px 0 0 210px;
+}
+
+.form-button2b {
+  margin: 10px 0 0 10px;
 }
 
 .enrollee-fl {

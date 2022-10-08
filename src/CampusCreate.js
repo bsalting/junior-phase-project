@@ -32,11 +32,11 @@ const CampusCreate = () => {
       <form onSubmit={save}>
         <label> Name </label>
         <input name="name" value={inputs.name} onChange={onChange} />
-        {" *"}
+        &bull;
         <br />
         <label> Address </label>
         <input name="address" value={inputs.address} onChange={onChange} />
-        {" *"}
+        &bull;
         <br />
         <label> Image URL </label>
         <input name="imageUrl" value={inputs.imageUrl} onChange={onChange} />
