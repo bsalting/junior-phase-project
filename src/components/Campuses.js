@@ -30,10 +30,9 @@ const Campuses = () => {
                       : " enrollment"}) <br />
                     {campus.address} <br />
                     {campus.description} <br />
-                    <Link to={`/campuses/${campus.id}`}>
-                      Update Details
-                    </Link>{" "}
+                    <Link to={`/campuses/${campus.id}`}>Update</Link>{" "}
                     <button
+                      className="x-button"
                       onClick={() => {
                         dispatch(deleteCampus(campus));
                       }}

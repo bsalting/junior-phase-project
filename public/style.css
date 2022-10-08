@@ -108,6 +108,10 @@ select {
   margin: 10px 0 0 10px;
 }
 
+.x-button {
+  margin-top: 10px;
+}
+
 .enrollee-fl {
   float: left;
 }

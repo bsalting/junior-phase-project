@@ -38,10 +38,9 @@ const Students = () => {
                     <br />
                     GPA: {student.gpa}
                     <br />
-                    <Link to={`/students/${student.id}`}>
-                      Update Details
-                    </Link>{" "}
+                    <Link to={`/students/${student.id}`}>Update</Link>{" "}
                     <button
+                      className="x-button"
                       onClick={() => {
                         dispatch(deleteStudent(student));
                       }}
