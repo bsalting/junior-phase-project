@@ -93,14 +93,14 @@ const seed = async () => {
     Campus.create({
       name: "Hogwarts",
       address: "Undisclosed, Scotland",
-      description: "Hogwarts School [...]",
+      description: "Hogwarts School...",
       imageUrl:
         "https://hogwarts.io/images/avatars/upload/75c1eced7014a4bc935f4d1340b1dda1_1885.jpg?u=20181212",
     }),
     Campus.create({
-      name: "Durmstung",
+      name: "Durmstrung",
       address: "Undisclosed, Germany",
-      description: "Durmstrang Institute...",
+      description: "Durmstrung Institute...",
       imageUrl: "https://hogwarts.io/files/ca6ddc809e98061e.png",
     }),
     Campus.create({

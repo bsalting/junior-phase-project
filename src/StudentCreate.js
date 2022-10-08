@@ -11,7 +11,7 @@ const StudentCreate = () => {
     email: "",
     imageUrl: "",
     gpa: 0.0,
-    campusId: null,
+    campusId: "",
   });
 
   const onChange = (ev) => {

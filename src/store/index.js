@@ -144,6 +144,9 @@ export const deleteStudent = (student) => {
 
 export const createStudent = (student) => {
   return async (dispatch) => {
+    if (student.campusId === "") {
+      student.campusId = null;
+    }
     const response = await axios.post("/api/students", student);
     dispatch(_createStudent(response.data));
   };

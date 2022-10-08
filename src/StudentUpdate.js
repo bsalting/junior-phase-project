@@ -19,7 +19,6 @@ const StudentUpdate = () => {
 
   useEffect(() => {
     const student = students.find((student) => student.id === id);
-    console.log(student);
     if (student) {
       setInputs({
         ...inputs,
@@ -99,7 +98,12 @@ const StudentUpdate = () => {
           <select
             name="campusId"
             value={inputs.campusId}
-            onChange={onChange}
+            onChange={(ev) =>
+              setInputs({
+                ...inputs,
+                campusId: ev.target.value === "" ? null : ev.target.value,
+              })
+            }
             disabled={edit ? "" : "disabled"}
           >
             <option value="">Select...</option>
