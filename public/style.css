@@ -3,11 +3,20 @@ body {
   color: #091e42;
 }
 
-nav {
+#nav {
   display: flex;
-  justify-content: space-evenly;
-  margin: 2rem 0 2rem 0;
-  font-size: 15pt;
+  justify-content: flex-start;
+  margin-top: 5vh;
+  font-size: 16pt;
+  font-weight: bold;
+}
+
+#nav-anchor {
+  margin: 0 3vw 0 15vw;
+}
+
+.nav-item {
+  margin: 0 3vw 0 0;
 }
 
 .container {
@@ -24,7 +33,7 @@ nav {
 
 #campuses-panel-r {
   flex: 1;
-  margin: 0 10% 0 0;
+  margin: 0 5% 0 5%;
 }
 
 #campus-panel-l {
@@ -34,7 +43,7 @@ nav {
 
 #campus-panel-r {
   flex: 1;
-  margin: 0 20% 0 0;
+  margin: 0 12% 0 10%;
 }
 
 #students-panel-l {
@@ -44,7 +53,7 @@ nav {
 
 #students-panel-r {
   flex: 1;
-  margin: 0 10% 0 0;
+  margin: 0 0 0 0;
 }
 
 img {
@@ -86,11 +95,11 @@ select {
 }
 
 .form-button {
-  margin: 10px 0 0 250px;
+  margin: 10px 0 0 17.5vw;
 }
 
 .form-button2a {
-  margin: 10px 0 0 210px;
+  margin: 10px 0 0 15vw;
 }
 
 .form-button2b {

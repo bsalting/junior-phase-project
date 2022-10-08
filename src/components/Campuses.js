@@ -38,7 +38,7 @@ const Campuses = () => {
                         dispatch(deleteCampus(campus));
                       }}
                     >
-                      <b>X</b>
+                      <b>x</b>
                     </button>
                   </div>
                 </div>
