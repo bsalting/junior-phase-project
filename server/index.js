@@ -6,6 +6,7 @@ const start = async () => {
   try {
     await db.sync({ force: true });
     await seed();
+    // Deployed on: https://bos-jpfp.herokuapp.com/
     app.listen(port, () => console.log(`listening on port ${port}`));
   } catch (ex) {
     console.log(ex);

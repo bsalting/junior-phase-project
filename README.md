@@ -1,5 +1,7 @@
 # Junior Phase Final Project
 
+# Deployed at https://bos-jpfp.herokuapp.com/
+
 ## Getting started
 
 1. Fork and clone this repo.
