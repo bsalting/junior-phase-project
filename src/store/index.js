@@ -123,7 +123,7 @@ export const createCampus = (campus) => {
 
 export const updateCampus = (campus) => {
   return async (dispatch) => {
-    const response = await axios.put(`/api/campus/${campus.id}`, campus);
+    const response = await axios.put(`/api/campuses/${campus.id}`, campus);
     dispatch(_updateCampus(response.data));
   };
 };

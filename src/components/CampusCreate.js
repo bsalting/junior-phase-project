@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { createCampus } from "./store";
+import { createCampus } from "../store";
 
 const CampusCreate = () => {
   const dispatch = useDispatch();

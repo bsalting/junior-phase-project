@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-import { updateStudent } from "./store";
+import { updateStudent } from "../store";
 import CampusUpdate from "./CampusUpdate";
 
 const Campus = () => {

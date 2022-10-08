@@ -1,32 +1,36 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { updateCampus } from "./store";
+import { updateStudent } from "../store";
 
-const CampusUpdate = () => {
+const StudentUpdate = () => {
   const { id } = useParams();
-  const { campuses } = useSelector((state) => state);
+  const { students, campuses } = useSelector((state) => state);
   const dispatch = useDispatch();
   const [edit, setEdit] = useState(false);
   const [inputs, setInputs] = useState({
-    name: "",
-    address: "",
-    description: "",
+    firstName: "",
+    lastName: "",
+    email: "",
     imageUrl: "",
+    gpa: 0,
+    campusId: "",
   });
 
   useEffect(() => {
-    const campus = campuses.find((campus) => campus.id === id);
-    if (campus) {
+    const student = students.find((student) => student.id === id);
+    if (student) {
       setInputs({
         ...inputs,
-        name: campus.name,
-        imageUrl: campus.imageUrl,
-        address: campus.address,
-        description: campus.description,
+        firstName: student.firstName,
+        lastName: student.lastName,
+        email: student.email,
+        imageUrl: student.imageUrl,
+        gpa: student.gpa,
+        campusId: student.campusId,
       });
     }
-  }, [campuses, id]);
+  }, [students, id]);
 
   const onChange = (ev) => {
     setInputs({
@@ -39,7 +43,7 @@ const CampusUpdate = () => {
     ev.preventDefault();
     const updated = { id, ...inputs };
     try {
-      dispatch(updateCampus(updated));
+      dispatch(updateStudent(updated));
     } catch (ex) {
       console.log(ex.response.data);
     }
@@ -50,18 +54,26 @@ const CampusUpdate = () => {
     <div className="container">
       <div>
         <form onSubmit={save}>
-          <label> Name </label>
+          <label> First Name </label>
           <input
-            name="name"
-            value={inputs.name}
+            name="firstName"
+            value={inputs.firstName}
             onChange={onChange}
             disabled={edit ? "" : "disabled"}
           />
           &bull; <br />
-          <label> Address </label>
+          <label> Last Name </label>
           <input
-            name="address"
-            value={inputs.address}
+            name="lastName"
+            value={inputs.lastName}
+            onChange={onChange}
+            disabled={edit ? "" : "disabled"}
+          />
+          &bull; <br />
+          <label> Email </label>
+          <input
+            name="email"
+            value={inputs.email}
             onChange={onChange}
             disabled={edit ? "" : "disabled"}
           />
@@ -74,13 +86,35 @@ const CampusUpdate = () => {
             disabled={edit ? "" : "disabled"}
           />
           <br />
-          <label> Description </label>
+          <label> GPA </label>
           <input
-            name="description"
-            value={inputs.description}
+            name="gpa"
+            value={inputs.gpa}
             onChange={onChange}
             disabled={edit ? "" : "disabled"}
           />
+          <br />
+          <label> Campus </label>
+          <select
+            name="campusId"
+            value={inputs.campusId}
+            onChange={(ev) =>
+              setInputs({
+                ...inputs,
+                campusId: ev.target.value === "" ? null : ev.target.value,
+              })
+            }
+            disabled={edit ? "" : "disabled"}
+          >
+            <option value="">Select...</option>
+            {campuses.map((campus) => {
+              return (
+                <option value={campus.id} key={campus.id}>
+                  {campus.name}
+                </option>
+              );
+            })}
+          </select>
           <br />
           <div className="container-btn">
             <button disabled={!edit} className="form-button2a">
@@ -100,4 +134,4 @@ const CampusUpdate = () => {
   );
 };
 
-export default CampusUpdate;
+export default StudentUpdate;

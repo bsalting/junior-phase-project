@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteStudent } from "./store";
+import { deleteStudent } from "../store";
 import { Link } from "react-router-dom";
 import StudentCreate from "./StudentCreate";
 

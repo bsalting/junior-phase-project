@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { fetchCampuses, fetchStudents } from "./store";
+import { fetchCampuses, fetchStudents } from "../store";
 import Home from "./Home";
 import Campuses from "./Campuses";
 import Campus from "./Campus";
